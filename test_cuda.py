@@ -13,7 +13,7 @@ print(f"CUDA版本: {torch.version.cuda}")
 if torch.cuda.is_available():
     print(f"GPU数量: {torch.cuda.device_count()}")
     for i in range(torch.cuda.device_count()):
-        print(f"GPU {i}: {torch.cuda.get_device_name(i)}")
+        print(f"GPU {i}: {torch.cuda.get_device_name(i)}") # NVIDIA GeForce RTX 3060 Laptop GPU
     print(f"cuDNN版本: {torch.backends.cudnn.version()}")
 
     # 测试GPU计算
