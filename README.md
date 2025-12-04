@@ -27,6 +27,7 @@ data/
 ```
 
 
+
 ### 步骤2：序列数据处理 (`prepare/extract_m&ms_series.py`)
 **此脚本用于处理4D序列数据，提取符合条件的3D切片**
 
@@ -44,12 +45,5 @@ data/
 └── test_masks_series/      # 处理后的测试集标注切片
 ```
 
-## 使用说明
 
-### 完整处理流程：
-```bash
-
-python prepare/get_m&ms_dataset.py
-
-```
 
