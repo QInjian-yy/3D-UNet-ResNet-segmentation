@@ -68,7 +68,7 @@ data/
 ## 依赖库
 
 ```bash
-pip install nibabel openpyxl
+conda install nibabel openpyxl
 ```
 
 - **nibabel**: 用于读取 NIfTI 格式医学图像
