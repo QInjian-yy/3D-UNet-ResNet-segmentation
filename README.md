@@ -75,4 +75,44 @@ conda install nibabel openpyxl
 - **openpyxl**: 用于创建和写入 Excel 文件
 
 
+### 步骤3：图像重采样处理 (`tools/resize_dataset.py`)
+
+#### 功能概述：
+此脚本用于将训练集和验证集的图像和标注重采样到统一的体素尺寸，确保所有数据具有相同的空间分辨率，便于神经网络处理。
+
+#### 目标体素尺寸：
+通过统计训练集的体素尺寸，计算平均值得到：
+```
+new_voxel = [1.3056, 1.3056, 9.5422]  # 单位：毫米 (X, Y, Z)
+```
+
+#### 重采样方法：
+- **图像数据**：使用3次样条插值 (`order=3`)，保留更多细节
+- **标注数据**：使用最近邻插值 (`order=0`)，避免引入新的标签值
+
+#### 生成的目录结构：
+```
+data/
+├── train_images_resized/    # 重采样后的训练集图像
+├── train_masks_resized/     # 重采样后的训练集标注
+├── validation_images_resized/  # 重采样后的验证集图像
+└── validation_masks_resized/   # 重采样后的验证集标注
+# 测试集保持原始状态
+├── test_images_series/     # 原始测试集图像
+└── test_masks_series/      # 原始测试集标注
+```
+
+## 依赖库安装
+
+```bash
+conda install simpleitk scipy
+```
+
+- **SimpleITK**: 用于医学图像读取和保存
+- **scipy**: 提供图像重采样功能
+
+
+
+
+
 
