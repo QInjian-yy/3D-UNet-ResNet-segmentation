@@ -112,6 +112,22 @@ conda install simpleitk scipy
 - **scipy**: 提供图像重采样功能
 
 
+### 步骤4：图像Z-score标准化以及调窗处理 (`tools/normalize_dataset.py`)
+
+#### 功能概述：
+输入：重采样后的训练集/验证集图像（已统一尺寸）
+调窗：截断5%-95%外的异常值 & 标准化：Z-score归一化（均值0，标准差1）
+
+#### 生成的目录结构：
+```
+data/
+├── train_images_normalized/    # 标准化后的训练集图像   
+├── validation_images_normalized/  # 标准化后的验证集图像
+# 测试集保持原始状态
+├── test_images_series/     # 原始测试集图像
+└── test_masks_series/      # 原始测试集标注
+```
+
 
 
 
