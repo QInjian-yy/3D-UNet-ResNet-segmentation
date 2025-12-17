@@ -128,7 +128,24 @@ data/
 └── test_masks_series/      # 原始测试集标注
 ```
 
+### 步骤5：大3D图像padding以及分块处理 (`tools/padding_and_make_patch.py`)
 
+#### 功能概述：
+3D医学图像分块提取与重叠处理，边缘补零 → 重叠分块 → 保存为小尺寸块 ，将大尺寸3D图像分割为固定大小的子块，适配深度学习模型输入。
 
+#### 采用边缘补零 + 仅中心预测策略处理卷积边界效应。
+#### 由于卷积操作的填充操作导致边界区域不可信，故预测时只取中间部分
+
+#### 生成的目录结构：
+```
+data/
+    ├── train_images_patches/       # 训练集图像分块
+    ├── train_masks_patches/        # 训练集标签分块
+    ├── validation_images_patches/  # 验证集图像分块
+    └── validation_masks_patches/   # 验证集标签分块
+    # 测试集保持原始状态
+    ├── test_images_series/     # 原始测试集图像
+    └── test_masks_series/      # 原始测试集标注
+```
 
 
