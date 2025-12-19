@@ -20,6 +20,7 @@ cover_ratio = 0.5
 pad_nx, pad_ny, pad_nz = b_nx // 4, b_ny // 4, b_nz // 4 ## //表示整除
 ########################################################################################################################
 
+
 # 输入文件夹路径（归一化后的图像和重采样后的标签）
 image_folder = "D:\\PythonProject\\MMS\\validation_images_normalized\\"
 label_folder = "D:\\PythonProject\\MMS\\validation_masks_resized\\"
