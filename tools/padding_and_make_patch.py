@@ -54,7 +54,7 @@ for idx in range(len(image_names)):
     v_nx = image_array.shape[2] # X方向尺寸（列）
     v_ny = image_array.shape[1] # Y方向尺寸（行）
     v_nz = image_array.shape[0] # Z方向尺寸（层）
-    ## 2. 计算子块滑动步长（Stride）
+    ## 2.） 计算子块滑动步长（Stride
     # 核心逻辑：通过重叠比例计算有效滑动步长，确保相邻子块间有重叠区域
     # 公式：步长 = 子块尺寸 × (1 - 重叠比例)
     st_nx = np.int32(np.round(b_nx - cover_ratio * b_nx))
