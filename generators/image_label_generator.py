@@ -63,7 +63,7 @@ class Image_Label_train(Dataset):
 
             # 随机添加高斯噪声（10%概率） - 模拟传感器噪声或环境干扰
             if np.random.random_sample() > 0.9:
-                variance = random.uniform(0, 0.1)  # 随机噪声方差（0-0.1）
+                variance = random.uniform(0, 0.1)  # 随机噪声标准差（0-0.1）
                 image_array = image_array + np.random.normal(0.0, variance, image_array.shape).astype(
                     'float32')  # 添加高斯噪声
 
