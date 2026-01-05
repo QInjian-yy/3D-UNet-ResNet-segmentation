@@ -116,7 +116,7 @@ def main():
 
     # ---------------------- 4. 开始训练循环 ----------------------
     for epoch in range(epoches):
-        print("Now is the %d epoch" % (epoch + 1))
+        print("\nNow is the %d epoch" % (epoch + 1))
         print("The LR now is: ", optimizer.param_groups[0]["lr"])
         model.train() # 设置模型为训练模式（开启Dropout等）
         #########################################################
